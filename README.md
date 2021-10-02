@@ -64,9 +64,9 @@ and the bottom of the page  - Done in given time
 • User should be able to search through the Pokémon list using the name and abilities  - Done in given time
 • User should be able to sort the result by name, height and weight.  - Done in given time
 
-• Page refresh should maintain the sorting and search related data. - Not Done
+• Page refresh should maintain the sorting and search related data. - Could Not Do in given time
 • User should be taken to the details page and present all the information available for
-that Pokémon. The user should have a link to go back to the previous page. - Not Done
+that Pokémon. The user should have a link to go back to the previous page. - Could Not Do in given time
 ```
 
 ## Contributing
