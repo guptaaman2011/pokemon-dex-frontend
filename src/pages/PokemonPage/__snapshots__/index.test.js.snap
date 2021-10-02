@@ -16,12 +16,62 @@ exports[`PokemonPage should render without breaking 1`] = `
     <Col
       span={6}
     >
-      Search Pokemon
+      <PokemonSearch
+        onSearch={[Function]}
+      />
     </Col>
     <Col
-      span={6}
+      span={1}
+    />
+    <Col
+      span={5}
     >
-      Sort By
+      Sort Pokemon By
+      <ForwardRef(InternalSelect)
+        defaultValue="name"
+        onChange={[Function]}
+        style={
+          Object {
+            "width": 80,
+          }
+        }
+      >
+        <Option
+          value="name"
+        >
+          Name
+        </Option>
+        <Option
+          value="height"
+        >
+          Height
+        </Option>
+        <Option
+          value="weight"
+        >
+          Weight
+        </Option>
+      </ForwardRef(InternalSelect)>
+      <ForwardRef(InternalSelect)
+        defaultValue="asc"
+        onChange={[Function]}
+        style={
+          Object {
+            "width": 60,
+          }
+        }
+      >
+        <Option
+          value="asc"
+        >
+          Asc
+        </Option>
+        <Option
+          value="desc"
+        >
+          Desc
+        </Option>
+      </ForwardRef(InternalSelect)>
     </Col>
   </Row>
   <hr />

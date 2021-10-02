@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonSearch should render without breaking 1`] = `
+<Search
+  allowClear={true}
+  enterButton="Search"
+  onSearch={[Function]}
+  placeholder="Search Pokemon"
+  size="large"
+/>
+`;

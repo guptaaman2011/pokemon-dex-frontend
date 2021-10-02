@@ -5,16 +5,19 @@ exports[`PokemonCard should render without breaking 1`] = `
   cover={
     <img
       alt="example"
+      src=""
     />
   }
   hoverable={true}
 >
-  <Meta />
   <Meta
-    title="Height: undefined Weight: undefined"
+    title=""
   />
   <Meta
-    title="Abilities: undefined"
+    title="Height: 0 Weight: 0"
+  />
+  <Meta
+    title="Abilities: "
   />
 </Card>
 `;

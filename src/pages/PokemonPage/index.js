@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Pagination, List } from "antd";
-import { PokemonHeader, PokemonCard } from "../../components";
+import { Row, Col, Pagination, List, Select } from "antd";
+import { PokemonHeader, PokemonCard, PokemonSearch } from "../../components";
 
+const { Option } = Select;
 function PokemonPage() {
   const [data, setData] = useState([]);
   const [totalCount, setTotalCount] = useState("");
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(20);
+  const [sortByAttribute, setSortByAttribute] = useState("name");
+  const [sortByOrder, setSortByOrder] = useState("asc");
 
   useEffect(() => {
     const offSetValue = page === -1 ? 0 : page * pageSize;
@@ -42,6 +45,56 @@ function PokemonPage() {
     fetchData();
   }, [page, pageSize]);
 
+  const onSearch = value => {
+    console.warn(value);
+    if (value === "") {
+      setPage(page - 1);
+      setPageSize(pageSize);
+    } else {
+      const searchedPokemonData = data.filter(
+        el => el.name.includes(value) || el.abilities.includes(value)
+      );
+      setData(searchedPokemonData);
+    }
+  };
+
+  const handleSortByAttribute = value => {
+    if (value === "name") {
+      data.sort((a, b) =>
+        sortByOrder === "asc"
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name)
+      );
+    }
+    if (value === "height") {
+      data.sort((a, b) =>
+        sortByOrder === "asc" ? a.height - b.height : b.height - a.height
+      );
+    }
+
+    if (value === "weight") {
+      data.sort((a, b) =>
+        sortByOrder === "asc" ? a.weight - b.weight : b.weight - a.weight
+      );
+    }
+    setSortByAttribute(value);
+  };
+
+  const handleSortByOrder = value => {
+    if (sortByAttribute === "height") {
+      data.sort((a, b) =>
+        value === "asc" ? a.height - b.height : b.height - a.height
+      );
+    }
+
+    if (sortByAttribute === "weight") {
+      data.sort((a, b) =>
+        value === "asc" ? a.weight - b.weight : b.weight - a.weight
+      );
+    }
+    setSortByOrder(value);
+  };
+
   return (
     <div>
       <PokemonHeader />
@@ -56,8 +109,30 @@ function PokemonPage() {
             }}
           />
         </Col>
-        <Col span={6}>Search Pokemon</Col>
-        <Col span={6}>Sort By</Col>
+        <Col span={6}>
+          <PokemonSearch onSearch={onSearch} />
+        </Col>
+        <Col span={1}>{null}</Col>
+        <Col span={5}>
+          Sort Pokemon By
+          <Select
+            defaultValue={sortByAttribute}
+            style={{ width: 80 }}
+            onChange={handleSortByAttribute}
+          >
+            <Option value="name">Name</Option>
+            <Option value="height">Height</Option>
+            <Option value="weight">Weight</Option>
+          </Select>
+          <Select
+            defaultValue={sortByOrder}
+            style={{ width: 60 }}
+            onChange={handleSortByOrder}
+          >
+            <Option value="asc">Asc</Option>
+            <Option value="desc">Desc</Option>
+          </Select>
+        </Col>
       </Row>
       <hr />
       <List
