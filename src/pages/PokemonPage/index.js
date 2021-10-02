@@ -108,6 +108,7 @@ function PokemonPage() {
   return (
     <div>
       <PokemonHeader />
+      <hr />
       <Row>
         <Col span={12}>
           <Pagination
