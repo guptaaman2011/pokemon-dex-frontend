@@ -1,0 +1,16 @@
+.logo{ 
+	position: 'fixed'; 
+	top:0; 
+	left:20;
+} 
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background: #EF5350;
+}
+
+.layout {
+  padding-bottom: 66px;
+}
