@@ -5,7 +5,7 @@ This repository contains code for Pokemon Dex Frontend
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-* Node v12.18.3
+* Node
 * Yarn 
   
 ### Installing
