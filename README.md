@@ -48,6 +48,26 @@ yarn build
 ```
 It'll create an optimised build in __build__ directory
 
+### Scope Done
+```
+Create a web application to list all Pokémon and show paginated results
+• User should be shown the Pokémons in a card-based layout (click to see best practices) - Done in given time
+• Each card should contain the image of the Pokémon - Done in given time
+o Name
+o Height
+o Weight
+o List of abilities.
+• User should have option to choose the number of cards available per page available
+options are 10, 20 and 50  - Done in given time
+• User should be shown previous and next links - on both the top
+and the bottom of the page  - Done in given time
+• User should be able to search through the Pokémon list using the name and abilities  - Done in given time
+• User should be able to sort the result by name, height and weight.  - Done in given time
+
+• Page refresh should maintain the sorting and search related data. - Not Done
+• User should be taken to the details page and present all the information available for
+that Pokémon. The user should have a link to go back to the previous page. - Not Done
+```
 
 ## Contributing
 Changes must be provided via Pull Request in Github.
