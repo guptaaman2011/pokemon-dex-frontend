@@ -10,6 +10,7 @@ function PokemonPage() {
   const [pageSize, setPageSize] = useState(20);
   const [sortByAttribute, setSortByAttribute] = useState("name");
   const [sortByOrder, setSortByOrder] = useState("asc");
+  const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
     const offSetValue = page === -1 ? 0 : page * pageSize;
@@ -43,17 +44,17 @@ function PokemonPage() {
     };
 
     fetchData();
-  }, [page, pageSize]);
+    setIsSearched(false);
+  }, [page, pageSize, isSearched]);
 
   const onSearch = value => {
     if (value === "") {
-      setPage(page - 1);
-      setPageSize(pageSize);
+      setIsSearched(true);
     } else {
       const searchedPokemonData = data.filter(
         el =>
-          el.name.toLowerCase().includes(value) ||
-          el.abilities.toLowerCase().includes(value)
+          el.name.toLowerCase().includes(value.toLowerCase()) ||
+          el.abilities.toLowerCase().includes(value.toLowerCase())
       );
       setData(searchedPokemonData);
     }
