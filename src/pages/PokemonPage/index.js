@@ -83,6 +83,14 @@ function PokemonPage() {
   };
 
   const handleSortByOrder = value => {
+    if (sortByAttribute === "name") {
+      data.sort((a, b) =>
+        value === "asc"
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name)
+      );
+    }
+
     if (sortByAttribute === "height") {
       data.sort((a, b) =>
         value === "asc" ? a.height - b.height : b.height - a.height
