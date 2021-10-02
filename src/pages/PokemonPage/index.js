@@ -46,13 +46,14 @@ function PokemonPage() {
   }, [page, pageSize]);
 
   const onSearch = value => {
-    console.warn(value);
     if (value === "") {
       setPage(page - 1);
       setPageSize(pageSize);
     } else {
       const searchedPokemonData = data.filter(
-        el => el.name.includes(value) || el.abilities.includes(value)
+        el =>
+          el.name.toLowerCase().includes(value) ||
+          el.abilities.toLowerCase().includes(value)
       );
       setData(searchedPokemonData);
     }
