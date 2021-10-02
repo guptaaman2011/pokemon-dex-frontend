@@ -11,19 +11,58 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest-enzyme": "^7.0.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "jest-styled-components": "^6.2.2",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "prettier": "^1.18.2",
+    "lint-staged": "^8.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "coverage": "react-scripts coverage",
+    "eject": "react-scripts eject",
+    "eslint": "eslint --cache src",
+    "eslint-no-cache": "eslint src",
+    "stylelint": "stylelint src",
+    "prettier": "prettier --write -l \"src/**/*.{js,jsx}\"",
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn prettier",
+      "git add",
+      "yarn eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run coverage"
+    }
   },
   "browserslist": {
     "production": [

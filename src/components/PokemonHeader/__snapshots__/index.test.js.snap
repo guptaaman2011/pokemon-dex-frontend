@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonHeader should render without breaking 1`] = `
+<Layout
+  className="layout"
+>
+  <Header
+    className="header"
+  >
+    <div
+      className="logo"
+    >
+      <img
+        alt="PokemonImage"
+        height="40px"
+        src="/pokeapi_256.png"
+      />
+    </div>
+  </Header>
+</Layout>
+`;

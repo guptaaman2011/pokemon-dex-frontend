@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonCard should render without breaking 1`] = `
+<Card
+  cover={
+    <img
+      alt="example"
+    />
+  }
+  hoverable={true}
+>
+  <Meta />
+  <Meta
+    title="Height: undefined Weight: undefined"
+  />
+  <Meta
+    title="Abilities: undefined"
+  />
+</Card>
+`;

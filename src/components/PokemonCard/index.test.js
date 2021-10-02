@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { shallowToJson } from "enzyme-to-json";
-import App from "./App";
+import { PokemonCard } from "..";
 
-describe("App", () => {
+describe("PokemonCard", () => {
   it("should render without breaking", () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<PokemonCard />);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

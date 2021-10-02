@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonPage should render without breaking 1`] = `
+<div>
+  <PokemonHeader />
+  <Row>
+    <Col
+      span={12}
+    >
+      <Pagination
+        defaultPageSize={20}
+        onChange={[Function]}
+        total=""
+      />
+    </Col>
+    <Col
+      span={6}
+    >
+      Search Pokemon
+    </Col>
+    <Col
+      span={6}
+    >
+      Sort By
+    </Col>
+  </Row>
+  <hr />
+  <List
+    dataSource={Array []}
+    grid={
+      Object {
+        "gutter": 16,
+        "lg": 4,
+        "md": 4,
+        "sm": 2,
+        "xl": 5,
+        "xs": 1,
+        "xxl": 3,
+      }
+    }
+    renderItem={[Function]}
+  />
+  <div>
+    <Pagination
+      defaultPageSize={20}
+      onChange={[Function]}
+      total=""
+    />
+  </div>
+  <br />
+</div>
+`;

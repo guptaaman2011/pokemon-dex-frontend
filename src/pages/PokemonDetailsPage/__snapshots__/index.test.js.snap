@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonDetailsPage should render without breaking 1`] = `
+<div>
+  <h2>
+    PokemonDetailsPage
+  </h2>
+</div>
+`;
